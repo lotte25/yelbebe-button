@@ -1,0 +1,29 @@
+name: Build & Upload artifact
+
+on:
+    workflow_dispatch:
+
+jobs:
+    build-app:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Clone repository
+              uses: actions/checkout@v4
+
+            - name: Set up Flutter
+              uses: subosito/flutter-action@v2
+              with:
+                channel: stable
+                cache: true
+                cache-key: "flutter-:os:-:version:-:arch:"
+                cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"
+            - run: flutter --version
+
+            - name: Build for Android
+              run: flutter build apk --release
+
+            - name: Upload Artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                name: Nightly
+                path: build/app/outputs/flutter-apk/*.apk

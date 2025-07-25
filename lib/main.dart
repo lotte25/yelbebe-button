@@ -69,8 +69,8 @@ class Homepage extends StatelessWidget {
               playButtonSound();
             },
             child: SizedBox(
-              width: 300,
-              height: 300,
+              width: 320,
+              height: 320,
               child: Image.asset("assets/yelbebe.png", fit: BoxFit.cover)
             ),
           )

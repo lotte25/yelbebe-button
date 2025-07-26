@@ -1,0 +1,9 @@
+app_id: 91904934-A943-4FFB-B69F-170256614542
+display_name: Y el bebé Button
+setup_icon_file: windows/runner/resources/app_icon.ico
+publisher: Lotte25
+publisher_url: https://github.com/lotte25/yelbebe-button
+create_desktop_icon: true
+locales:
+  - en
+  - es

@@ -1,8 +1,8 @@
 output: dist/
 releases:
-  - name: prod
+  - name: android
     jobs:
-      - name: android-apk
+      - name: apk
         package:
           platform: android
           target: apk
@@ -13,7 +13,9 @@ releases:
           args:
             repo-owner: lotte25
             repo-name: yelbebe-button
-      - name: linux-appimage
+  - name: linux
+    jobs:
+      - name: appimage
         package:
           platform: linux
           target: appimage
@@ -22,7 +24,9 @@ releases:
           args:
             repo-owner: lotte25
             repo-name: yelbebe-button
-      - name: windows-exe
+  - name: windows
+    jobs:
+      - name: exe
         package:
           platform: windows
           target: exe

@@ -37,7 +37,7 @@ jobs:
               run: |
                 flutter pub get
                 dart pub global activate fastforge
-                fastforge release --name android-apk
+                fastforge release --name android
               env:
                 GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     linux:
@@ -85,7 +85,7 @@ jobs:
           run: |
             flutter pub get
             dart pub global activate fastforge
-            fastforge release --name linux-appimage
+            fastforge release --name linux
           env:
             GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     windows: 
@@ -123,6 +123,6 @@ jobs:
             flutter pub get
             flutter config --enable-windows-desktop
             dart pub global activate fastforge
-            fastforge release --name windows-exe
+            fastforge release --name windows
           env:
             GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
